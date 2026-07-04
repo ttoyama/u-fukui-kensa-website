@@ -5,23 +5,34 @@ import staff from '../data/staff.json';
 const base = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="スタッフ紹介" breadcrumb={[{ label: 'スタッフ紹介' }]} wide>
+<PageLayout title="スタッフ紹介" breadcrumb={[{ label: 'スタッフ紹介' }]}>
+  <p class="text-[15px] text-primary-600 leading-[1.9] mb-12">
+    臨床検査専門医・医師と、臨床検査技師がチームで検査を担っています。
+  </p>
+
   <!-- 医師・大学院生 -->
   <section class="mb-16">
-    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">医師・大学院生</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-      {staff.physicians.map((p) => (
-        <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden">
-          <img
-            src={`${base}images/staff/${p.photo ?? 'placeholder-male.png'}`}
-            alt={p.name}
-            class="w-full aspect-[4/5] object-cover bg-primary-50"
-            loading="lazy"
-          />
-          <div class="p-4">
-            <p class="text-xs text-primary-500 mb-0.5">{p.title}</p>
-            <p class="text-base font-bold text-primary-900">{p.name}</p>
-            {p.note && <p class="text-[11px] text-primary-400 mt-1">{p.note}</p>}
+    <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-6 section-line">医師</h2>
+    <div class="divide-y divide-gray-100">
+      {staff.physicians.map((m) => (
+        <div class="flex items-start gap-5 py-5">
+          <div class="w-20 shrink-0">
+            {m.photo && (
+              <img
+                src={`${base}images/staff/${m.photo}`}
+                alt={m.name}
+                class="w-20 h-20 rounded-lg object-cover object-top border border-primary-100"
+                loading="lazy"
+              />
+            )}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-[11px] text-primary-400 mb-0.5">{m.ruby}</p>
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <h3 class="font-bold text-primary-900 text-base">{m.name}</h3>
+              <p class="text-xs text-primary-500">{m.title}</p>
+            </div>
+            {m.note && <p class="text-xs text-primary-400 mt-1">{m.note}</p>}
           </div>
         </div>
       ))}
@@ -30,20 +41,19 @@ const base = import.meta.env.BASE_URL;
 
   <!-- 臨床検査技師 -->
   <section class="mb-16">
-    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">臨床検査技師</h2>
-    <div class="grid sm:grid-cols-2 gap-3 mb-8">
-      {staff.technologistLeaders.map((t) => (
-        <div class="flex items-baseline gap-3 rounded-lg border border-primary-100 bg-primary-50 px-4 py-3">
-          <span class="text-xs text-primary-500 w-36 shrink-0">{t.title}</span>
-          <span class="text-sm font-bold text-primary-900">{t.name}</span>
-        </div>
-      ))}
-    </div>
-    <div class="flex flex-wrap gap-6">
-      {staff.counts.map((c) => (
-        <div class="rounded-lg border border-primary-100 bg-white px-5 py-4">
-          <p class="text-xs text-primary-500 mb-1">{c.label}</p>
-          <p class="text-lg font-bold text-primary-900">{c.value}</p>
+    <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-6 section-line">スタッフ</h2>
+    <div class="space-y-8">
+      {staff.technologistGroups.map((g) => (
+        <div>
+          <p class="text-xs font-bold text-primary-600 mb-3">{g.title}</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+            {g.members.map((m) => (
+              <div class="rounded-lg border border-primary-100 bg-primary-50 px-3.5 py-2.5">
+                <p class="text-[10px] text-primary-400 leading-none mb-1">{m.ruby}</p>
+                <p class="text-sm font-medium text-primary-900">{m.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
@@ -51,7 +61,7 @@ const base = import.meta.env.BASE_URL;
 
   <!-- 施設認定 -->
   <section>
-    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">施設認定</h2>
+    <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-6 section-line">施設認定</h2>
     <div class="overflow-x-auto">
       <table class="w-full text-sm border-collapse">
         <tbody>

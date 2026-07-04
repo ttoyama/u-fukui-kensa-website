@@ -54,7 +54,7 @@ function citation(p: Paper): string {
 
 <PageLayout title="研究業績" breadcrumb={[{ label: '研究業績' }]}>
   <p class="text-sm text-primary-500 mb-2">
-    検査部の研究業績一覧です（論文 {paperTotal}件・学会発表 {presTotal}件）。
+    検査部の研究業績一覧です。
   </p>
   <p class="text-xs text-primary-400 mb-12">
     著者のうち<span class="font-bold text-primary-700">太字</span>が検査部所属者です。
@@ -67,14 +67,14 @@ function citation(p: Paper): string {
       data-tab="papers"
       class="tab-btn px-5 py-3 text-sm font-medium border-b-2 border-accent-500 text-primary-900 -mb-px"
     >
-      論文<span class="text-xs font-normal text-primary-400 ml-1.5">{paperTotal}件</span>
+      論文
     </button>
     <button
       type="button"
       data-tab="presentations"
       class="tab-btn px-5 py-3 text-sm font-medium border-b-2 border-transparent text-primary-500 hover:text-primary-700 -mb-px"
     >
-      学会発表<span class="text-xs font-normal text-primary-400 ml-1.5">{presTotal}件</span>
+      学会発表
     </button>
   </div>
 
