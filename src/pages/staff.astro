@@ -59,6 +59,25 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- 検査部で研究に取り組むメンバー -->
+  {staff.researchAffiliates && staff.researchAffiliates.length > 0 && (
+    <section class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-3 section-line">検査部とともに研究するメンバー</h2>
+      <p class="text-sm text-primary-500 leading-[1.9] mb-6 max-w-2xl">
+        現在は関連施設で診療にあたりながら、検査医学講座の一員として研究を続けているメンバーです。
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+        {staff.researchAffiliates.map((m) => (
+          <div class="rounded-lg border border-primary-100 bg-white px-3.5 py-2.5">
+            <p class="text-[10px] text-primary-400 leading-none mb-1">{m.ruby}</p>
+            <p class="text-sm font-medium text-primary-900">{m.name}</p>
+            <p class="text-[11px] text-primary-400 mt-1">{m.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
   <!-- 施設認定 -->
   <section>
     <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-6 section-line">施設認定</h2>

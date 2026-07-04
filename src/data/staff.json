@@ -2,7 +2,11 @@
   "physicians": [
     { "name": "遠山 直志", "ruby": "とおやま ただし", "title": "検査部長・教授", "photo": "toyama.jpg", "note": "腎臓病態内科学・検査医学" },
     { "name": "髙橋 直生", "ruby": "たかはし なおき", "title": "准教授", "photo": "takahashi.jpg", "note": "腎臓病態内科学・検査医学" },
+    { "name": "木村 秀樹", "ruby": "きむら ひでき", "title": "客員教授", "note": "福井県赤十字血液センター" },
     { "name": "松田 航平", "ruby": "まつた こうへい", "title": "医員", "note": "検査医学講座" }
+  ],
+  "researchAffiliates": [
+    { "name": "岩村 菜々美", "ruby": "いわむら ななみ", "title": "大学院生", "note": "検査医学講座" }
   ],
   "technologistGroups": [
     {
