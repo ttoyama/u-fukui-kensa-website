@@ -1,0 +1,93 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const footerNav = [
+  {
+    title: '検査部案内',
+    links: [
+      { label: '部長挨拶', href: 'greeting/' },
+      { label: 'スタッフ紹介', href: 'staff/' },
+      { label: '部門紹介', href: 'divisions/' },
+    ],
+  },
+  {
+    title: '研究',
+    links: [
+      { label: '研究紹介', href: 'research/' },
+      { label: '研究業績', href: 'achievements/' },
+    ],
+  },
+  {
+    title: '学生・採用',
+    links: [
+      { label: '教育・実習', href: 'education/' },
+      { label: '採用・見学案内', href: 'recruit/' },
+      { label: 'お知らせ', href: 'news/' },
+    ],
+  },
+  {
+    title: '関連リンク',
+    links: [
+      { label: '福井大学', href: 'https://www.u-fukui.ac.jp/', external: true },
+      { label: '福井大学医学部', href: 'https://www.med.u-fukui.ac.jp/', external: true },
+      { label: '福井大学医学部附属病院', href: 'https://www.hosp.u-fukui.ac.jp/', external: true },
+      { label: '腎臓病態内科学・検査医学', href: 'https://kidney.med.u-fukui.ac.jp/', external: true },
+    ],
+  },
+];
+---
+
+<footer class="bg-primary-900 text-gray-400">
+  <div class="max-w-6xl mx-auto px-6 pt-16 pb-8">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+      <!-- Branding -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="text-white font-bold text-sm mb-3">福井大学医学部附属病院 検査部</p>
+        <p class="text-xs leading-relaxed text-gray-500">
+          〒910-1193<br />
+          福井県吉田郡永平寺町松岡下合月23-3<br />
+          福井大学医学部附属病院
+        </p>
+        <div class="mt-4 text-xs text-gray-500">
+          <p>TEL 0776-61-3111（代表）</p>
+        </div>
+      </div>
+
+      {footerNav.map((section) => (
+        <div>
+          <p class="text-[11px] font-medium text-gray-500 uppercase tracking-wider mb-4">{section.title}</p>
+          <ul class="space-y-2.5">
+            {section.links.map((link) => (
+              <li>
+                <a
+                  href={'external' in link ? link.href : base + link.href}
+                  {...('external' in link ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  class="text-[13px] text-gray-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="border-t border-primary-800 pt-6 mb-6 text-xs text-gray-400">
+      <p>
+        受診・検査をお考えの方へ — 外来・診療のご案内は
+        <a
+          href="https://www.hosp.u-fukui.ac.jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-300 underline underline-offset-2 hover:text-white transition-colors"
+        >福井大学医学部附属病院</a>
+        のページをご覧ください。
+      </p>
+    </div>
+
+    <div class="text-[11px] text-gray-500">
+      &copy; {new Date().getFullYear()} 福井大学医学部附属病院 検査部
+    </div>
+  </div>
+</footer>

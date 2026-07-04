@@ -1,0 +1,31 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import divisions from '../data/divisions.json';
+---
+
+<PageLayout title="部門紹介" breadcrumb={[{ label: '部門紹介' }]} wide>
+  <p class="text-[15px] text-primary-600 leading-[1.9] mb-12 max-w-2xl">
+    検査部は4つの部門で構成され、病院で行われる幅広い検査を担当しています。
+  </p>
+
+  <div class="space-y-10">
+    {divisions.map((d) => (
+      <section id={d.id} class="rounded-2xl border border-primary-100 overflow-hidden scroll-mt-24">
+        <div class="px-7 py-5 bg-primary-50 border-b border-primary-100 flex items-center gap-3">
+          <span class="text-2xl">{d.icon}</span>
+          <h2 class="text-xl font-bold text-primary-900">{d.name}</h2>
+        </div>
+        <div class="p-7">
+          <p class="text-[15px] text-primary-800 leading-[1.9] mb-6">{d.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {d.items.map((item) => (
+              <span class="text-[13px] rounded-full border border-primary-200 bg-white px-3.5 py-1.5 text-primary-700">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+</PageLayout>

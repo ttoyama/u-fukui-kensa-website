@@ -1,0 +1,194 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import achievementsData from '../data/achievements.json';
+
+interface Author {
+  name: string;
+  dept: boolean;
+}
+
+interface Paper {
+  titleEn: string;
+  titleJa: string;
+  isJapanese: boolean;
+  summary: string;
+  authors: Author[];
+  journal: string;
+  volume: string;
+  issue: string;
+  page: string;
+  date: string;
+  doi: string;
+}
+
+interface Presentation {
+  title: string;
+  authors: Author[];
+  conference: string;
+  venue: string;
+  date: string;
+  isInternational: boolean;
+}
+
+const paperGroups = achievementsData.papers as { fiscalYear: string; items: Paper[] }[];
+const presGroups = achievementsData.presentations as { fiscalYear: string; items: Presentation[] }[];
+const paperTotal = paperGroups.reduce((n, g) => n + g.items.length, 0);
+const presTotal = presGroups.reduce((n, g) => n + g.items.length, 0);
+
+// 英語論文: 主タイトル=英語、副タイトル(濃青)=日本語訳。日本語論文: 主タイトル=日本語、副なし。
+function primaryTitle(p: Paper): string {
+  if (p.isJapanese) return p.titleJa || p.titleEn;
+  return p.titleEn || p.titleJa;
+}
+function secondaryTitle(p: Paper): string {
+  return p.isJapanese ? '' : p.titleJa;
+}
+function citation(p: Paper): string {
+  let s = p.journal;
+  if (p.volume) s += ` ${p.volume}`;
+  if (p.issue) s += `(${p.issue})`;
+  if (p.page) s += `: ${p.page}`;
+  return s;
+}
+---
+
+<PageLayout title="研究業績" breadcrumb={[{ label: '研究業績' }]}>
+  <p class="text-sm text-primary-500 mb-2">
+    検査部の研究業績一覧です（論文 {paperTotal}件・学会発表 {presTotal}件）。
+  </p>
+  <p class="text-xs text-primary-400 mb-12">
+    著者のうち<span class="font-bold text-primary-700">太字</span>が検査部所属者です。
+  </p>
+
+  {/* ===== タブ ===== */}
+  <div class="flex gap-1 border-b border-gray-200 mb-10" role="tablist">
+    <button
+      type="button"
+      data-tab="papers"
+      class="tab-btn px-5 py-3 text-sm font-medium border-b-2 border-accent-500 text-primary-900 -mb-px"
+    >
+      論文<span class="text-xs font-normal text-primary-400 ml-1.5">{paperTotal}件</span>
+    </button>
+    <button
+      type="button"
+      data-tab="presentations"
+      class="tab-btn px-5 py-3 text-sm font-medium border-b-2 border-transparent text-primary-500 hover:text-primary-700 -mb-px"
+    >
+      学会発表<span class="text-xs font-normal text-primary-400 ml-1.5">{presTotal}件</span>
+    </button>
+  </div>
+
+  {/* ===== 論文 ===== */}
+  <section data-panel="papers">
+    {paperGroups.map((g) => (
+      <section class="mb-12 last:mb-0">
+        <h3 class="text-sm font-bold text-primary-700 border-b border-accent-300 pb-1.5 mb-5">
+          {g.fiscalYear}年度
+          <span class="text-xs font-normal text-primary-400 ml-2">{g.items.length}件</span>
+        </h3>
+        <div class="divide-y divide-gray-100">
+          {g.items.map((p) => (
+            <article class="py-4 first:pt-0 last:pb-0">
+              <h4 class="text-[15px] font-medium text-primary-900 leading-relaxed mb-1">
+                {primaryTitle(p)}
+              </h4>
+              {p.authors.length > 0 && (
+                <p class="text-xs text-primary-500 leading-relaxed mb-1">
+                  {p.authors.map((a, i) => (
+                    <>
+                      {i > 0 && '、'}
+                      {a.dept ? <span class="font-bold text-primary-700">{a.name}</span> : a.name}
+                    </>
+                  ))}
+                </p>
+              )}
+              <p class="text-sm">
+                <span class="text-accent-700">{citation(p)}</span>
+                {p.doi && (
+                  <a
+                    href={`https://doi.org/${p.doi}`}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-primary-400 hover:text-accent-600 ml-2 text-xs"
+                  >DOI</a>
+                )}
+              </p>
+              {(secondaryTitle(p) || p.summary) && (
+                <div class="mt-2 pl-3 border-l-2 border-primary-100">
+                  {secondaryTitle(p) && (
+                    <p class="text-[13px] text-primary-700 leading-relaxed">{secondaryTitle(p)}</p>
+                  )}
+                  {p.summary && (
+                    <p class="text-xs text-primary-500 leading-relaxed mt-0.5">{p.summary}</p>
+                  )}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </section>
+
+  {/* ===== 学会発表 ===== */}
+  <section data-panel="presentations" class="hidden">
+    {presGroups.map((g) => (
+      <section class="mb-12 last:mb-0">
+        <h3 class="text-sm font-bold text-primary-700 border-b border-accent-300 pb-1.5 mb-5">
+          {g.fiscalYear}年度
+          <span class="text-xs font-normal text-primary-400 ml-2">{g.items.length}件</span>
+        </h3>
+        <div class="divide-y divide-gray-100">
+          {g.items.map((pr) => (
+            <article class="py-4 first:pt-0 last:pb-0">
+              <h4 class="text-[15px] font-medium text-primary-900 leading-relaxed mb-1">
+                {pr.title}
+              </h4>
+              {pr.authors.length > 0 && (
+                <p class="text-xs text-primary-500 leading-relaxed mb-1">
+                  {pr.authors.map((a, i) => (
+                    <>
+                      {i > 0 && '、'}
+                      {a.dept ? <span class="font-bold text-primary-700">{a.name}</span> : a.name}
+                    </>
+                  ))}
+                </p>
+              )}
+              <p class="text-sm">
+                <span class="text-accent-700">{pr.conference}</span>
+                {pr.venue && <span class="text-primary-400 text-xs ml-1">（{pr.venue}）</span>}
+                {pr.isInternational && (
+                  <span class="text-[10px] text-accent-600 border border-accent-300 rounded px-1 ml-2 align-middle">国際学会</span>
+                )}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+    const panels = document.querySelectorAll<HTMLElement>('[data-panel]');
+
+    function activate(tab: string) {
+      buttons.forEach((b) => {
+        const active = b.dataset.tab === tab;
+        b.classList.toggle('border-accent-500', active);
+        b.classList.toggle('text-primary-900', active);
+        b.classList.toggle('border-transparent', !active);
+        b.classList.toggle('text-primary-500', !active);
+      });
+      panels.forEach((p) => {
+        p.classList.toggle('hidden', p.dataset.panel !== tab);
+      });
+      history.replaceState(null, '', '#' + tab);
+    }
+
+    buttons.forEach((b) => b.addEventListener('click', () => activate(b.dataset.tab!)));
+
+    // URL ハッシュで初期タブを指定（#presentations で学会発表から開ける）
+    if (location.hash === '#presentations') activate('presentations');
+  </script>
+</PageLayout>

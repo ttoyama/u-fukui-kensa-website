@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import divisions from '../data/divisions.json';
+import news from '../data/news.json';
+
+const base = import.meta.env.BASE_URL;
+
+const strengths = [
+  { title: 'ISO 15189 認定', text: '臨床検査室の国際規格 ISO 15189:2022 の認定を受け、国際レベルの品質管理体制で検査を行っています。' },
+  { title: '24時間、診療を支える', text: '救急や病棟からの緊急検査に対応し、昼夜を問わず正確なデータを届けています。' },
+  { title: '検査と臨床の近さ', text: '臨床検査専門医と臨床検査技師が同じチームで働き、検査データを診療に直結させています。' },
+];
+
+const latestNews = [...news].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+
+const cardBase = 'group relative block rounded-2xl border border-primary-100 overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5';
+---
+
+<BaseLayout title="トップページ">
+  <Header />
+  <main>
+    <Hero />
+
+    <!-- イントロ -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-xl md:text-2xl font-bold text-primary-900 leading-relaxed mb-5">
+          検査のプロフェッショナルが集まる部門です
+        </h2>
+        <p class="text-[15px] text-primary-600 leading-[1.9]">
+          福井大学医学部附属病院 検査部は、臨床検査専門医と約35名の臨床検査技師が、
+          血液や尿などの検体検査から、心電図・脳波などの生理検査、超音波検査まで、
+          病院の診療を支える幅広い検査を担っています。
+          先端機器と国際水準の品質管理体制で、迅速かつ正確な検査結果を届けることが私たちの仕事です。
+        </p>
+      </div>
+    </section>
+
+    <!-- 検査部の強み -->
+    <section class="bg-gray-50/70 border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-2xl font-bold text-primary-900 mb-3">検査部の強み</h2>
+        <p class="text-[15px] text-primary-600 leading-[1.9] mb-10 max-w-2xl">
+          大学病院の検査部として、質の高い検査と教育・研究の両立に取り組んでいます。
+        </p>
+        <div class="grid md:grid-cols-3 gap-5">
+          {strengths.map((s) => (
+            <div class="rounded-2xl border border-primary-100 border-l-2 border-l-accent-500 p-7 bg-primary-50">
+              <h3 class="text-lg font-bold text-primary-900 mb-3">{s.title}</h3>
+              <p class="text-sm text-primary-700 leading-[1.9]">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 部門紹介 -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-2xl font-bold text-primary-900 mb-3">部門紹介</h2>
+        <p class="text-[15px] text-primary-600 leading-[1.9] mb-10 max-w-2xl">
+          4つの部門が連携して、病院のすべての検査ニーズに応えています。
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {divisions.map((d) => (
+            <a href={`${base}divisions/#${d.id}`} class={cardBase} style="background: #f0fdfa;">
+              <div class="p-7">
+                <div class="text-2xl mb-2">{d.icon}</div>
+                <h3 class="text-lg font-bold text-primary-900 mb-2">{d.name}</h3>
+                <p class="text-sm text-primary-700 leading-relaxed">{d.summary}</p>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent-600 group-hover:gap-2 transition-all">詳しく見る →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 研究 -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-2xl font-bold text-primary-900 mb-3">研究</h2>
+        <p class="text-[15px] text-primary-600 leading-[1.9] mb-10 max-w-2xl">
+          日々の検査業務から生まれた疑問を研究テーマにして、技師と医師が一緒に学会発表・論文化に取り組んでいます。
+        </p>
+        <div class="grid md:grid-cols-2 gap-5">
+          <a href={base + 'research/'} class={cardBase} style="background: #f0fdfa;">
+            <div class="p-8">
+              <h3 class="text-xl font-bold text-primary-900 mb-3">研究紹介</h3>
+              <p class="text-sm text-primary-700 leading-relaxed">検査部で取り組んでいる研究テーマを紹介します。</p>
+              <span class="inline-flex items-center gap-1 mt-6 text-sm font-medium text-accent-600 group-hover:gap-2 transition-all">詳しく見る →</span>
+            </div>
+          </a>
+          <a href={base + 'achievements/'} class={cardBase} style="background: #f0fdfa;">
+            <div class="p-8">
+              <h3 class="text-xl font-bold text-primary-900 mb-3">研究業績</h3>
+              <p class="text-sm text-primary-700 leading-relaxed">論文・学会発表の一覧です。</p>
+              <span class="inline-flex items-center gap-1 mt-6 text-sm font-medium text-accent-600 group-hover:gap-2 transition-all">詳しく見る →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 学生・見学の方へ -->
+    <section class="bg-gray-50/70 border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-20">
+        <a href={base + 'education/'} class="group relative block overflow-hidden rounded-2xl border border-primary-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+          <div class="absolute inset-0" style="background: linear-gradient(120deg, #115e59 0%, #0d9488 60%, #10b981 100%);"></div>
+          <div class="relative p-8 md:p-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">学生・見学の方へ</h2>
+            <p class="text-[15px] text-white/90 leading-[1.9] max-w-xl mb-6">
+              臨床検査技師を目指す学生さんの臨地実習、進路を考えている高校生の見学、
+              他大学・他施設からの見学を受け入れています。検査の現場を、ぜひ見に来てください。
+            </p>
+            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary-700 text-sm font-bold">
+              教育・実習について見る →
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- お知らせ -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-20">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-bold text-primary-900">お知らせ</h2>
+          <a href={base + 'news/'} class="text-sm font-medium text-accent-600 hover:text-accent-500">一覧を見る →</a>
+        </div>
+        <div class="divide-y divide-gray-100">
+          {latestNews.map((item) => (
+            <article class="py-4 first:pt-0 last:pb-0 flex items-baseline gap-4 flex-wrap">
+              <time class="text-sm font-medium text-primary-500 tracking-wide shrink-0" datetime={item.date}>
+                {item.date.replace(/-/g, '.')}
+              </time>
+              <span class="text-[11px] border rounded px-2 py-0.5 text-primary-600 border-primary-200 shrink-0">{item.category}</span>
+              <p class="text-sm font-medium text-primary-900">{item.title}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 施設情報 -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 class="text-lg font-bold text-primary-900 mb-1">福井大学医学部附属病院 検査部</h2>
+            <p class="text-sm text-primary-600">〒910-1193 福井県吉田郡永平寺町松岡下合月23-3</p>
+          </div>
+          <div class="flex gap-8 text-sm">
+            <div>
+              <p class="text-[11px] text-primary-500 tracking-wider mb-1">電話</p>
+              <p class="font-medium text-primary-800">0776-61-3111（代表）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<PageLayout title="部長挨拶" breadcrumb={[{ label: '部長挨拶' }]}>
+  <div class="flex flex-col sm:flex-row gap-8 items-start mb-10">
+    <img
+      src={`${base}images/staff/toyama.jpg`}
+      alt="検査部長 遠山直志"
+      class="w-40 rounded-xl border border-primary-100 shrink-0"
+    />
+    <div>
+      <p class="text-sm text-primary-500 mb-1">検査部長・教授</p>
+      <p class="text-2xl font-bold text-primary-900">遠山 直志</p>
+      <p class="text-xs text-primary-500 mt-1">腎臓病態内科学・検査医学</p>
+    </div>
+  </div>
+
+  <div class="space-y-6 text-[15px] text-primary-800 leading-[2.0]">
+    <p>
+      福井大学医学部附属病院 検査部のホームページをご覧いただき、ありがとうございます。
+    </p>
+    <p>
+      検査部は、血液や尿などの検体検査、心電図や脳波などの生理検査、そして超音波検査まで、
+      病院で行われるほぼすべての臨床検査を担う部門です。
+      診療の現場で下されるさまざまな判断は、正確な検査データがあってはじめて成り立ちます。
+      私たちは「正確なデータを、必要なときに、確実に届ける」ことを使命として、
+      約35名の臨床検査技師と臨床検査専門医がチームで働いています。
+    </p>
+    <p>
+      当検査部は、臨床検査室の国際規格である ISO 15189 の認定を受けており、
+      国際水準の品質管理体制のもとで検査を行っています。
+      また大学病院の検査部として、日々の検査業務から生まれる疑問を大切にし、
+      技師と医師が一緒になって研究・学会発表に取り組んでいることも、私たちの特徴です。
+    </p>
+    <p>
+      このホームページでは、検査部の仕事や研究活動を紹介しています。
+      臨床検査技師を目指す学生さんや、進路を考えている高校生のみなさんにも、
+      検査の仕事の面白さが伝われば嬉しく思います。見学はいつでも歓迎しています。
+    </p>
+  </div>
+</PageLayout>

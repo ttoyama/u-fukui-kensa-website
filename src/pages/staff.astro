@@ -1,0 +1,68 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import staff from '../data/staff.json';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<PageLayout title="スタッフ紹介" breadcrumb={[{ label: 'スタッフ紹介' }]} wide>
+  <!-- 医師・大学院生 -->
+  <section class="mb-16">
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">医師・大学院生</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {staff.physicians.map((p) => (
+        <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden">
+          <img
+            src={`${base}images/staff/${p.photo ?? 'placeholder-male.png'}`}
+            alt={p.name}
+            class="w-full aspect-[4/5] object-cover bg-primary-50"
+            loading="lazy"
+          />
+          <div class="p-4">
+            <p class="text-xs text-primary-500 mb-0.5">{p.title}</p>
+            <p class="text-base font-bold text-primary-900">{p.name}</p>
+            {p.note && <p class="text-[11px] text-primary-400 mt-1">{p.note}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 臨床検査技師 -->
+  <section class="mb-16">
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">臨床検査技師</h2>
+    <div class="grid sm:grid-cols-2 gap-3 mb-8">
+      {staff.technologistLeaders.map((t) => (
+        <div class="flex items-baseline gap-3 rounded-lg border border-primary-100 bg-primary-50 px-4 py-3">
+          <span class="text-xs text-primary-500 w-36 shrink-0">{t.title}</span>
+          <span class="text-sm font-bold text-primary-900">{t.name}</span>
+        </div>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-6">
+      {staff.counts.map((c) => (
+        <div class="rounded-lg border border-primary-100 bg-white px-5 py-4">
+          <p class="text-xs text-primary-500 mb-1">{c.label}</p>
+          <p class="text-lg font-bold text-primary-900">{c.value}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 施設認定 -->
+  <section>
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">施設認定</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <tbody>
+          {staff.certifications.map((c) => (
+            <tr class="border-b border-gray-100">
+              <td class="py-3 pr-6 text-primary-600 whitespace-nowrap">{c.org}</td>
+              <td class="py-3 font-medium text-primary-900">{c.item}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Mac mini 仮運用: dist/ をポート8080で常駐配信する launchd 設定。
+  導入手順:
+    cp scripts/jp.ac.u-fukui.kensa-website.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/jp.ac.u-fukui.kensa-website.plist
+  停止:
+    launchctl unload ~/Library/LaunchAgents/jp.ac.u-fukui.kensa-website.plist
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>jp.ac.u-fukui.kensa-website</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/tadashi/githubs/u-fukui-kensa-website/scripts/serve.sh</string>
+    <string>8080</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/kensa-website-serve.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/kensa-website-serve.log</string>
+</dict>
+</plist>

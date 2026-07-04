@@ -1,0 +1,52 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const points = [
+  { title: '幅広い経験', text: '検体検査・生理検査・超音波検査まで、大学病院ならではの多様な検査と症例を経験できます。' },
+  { title: '資格取得の支援', text: '認定資格（超音波検査士、認定血液検査技師、認定臨床微生物検査技師など）の取得を部として支援しています。' },
+  { title: '研究・学会活動', text: '日々の業務から生まれた疑問を研究テーマにして、学会発表や論文化までを医師と一緒に経験できます。' },
+];
+---
+
+<PageLayout title="採用・見学案内" breadcrumb={[{ label: '採用・見学案内' }]}>
+  <p class="text-[15px] text-primary-600 leading-[1.9] mb-12">
+    福井大学医学部附属病院 検査部で、私たちと一緒に働きませんか。
+    見学は随時受け入れています。
+  </p>
+
+  <section class="mb-14">
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-8">検査部で働く魅力</h2>
+    <div class="space-y-4">
+      {points.map((p) => (
+        <div class="rounded-2xl border border-primary-100 border-l-2 border-l-accent-500 p-6 bg-primary-50">
+          <h3 class="text-base font-bold text-primary-900 mb-2">{p.title}</h3>
+          <p class="text-sm text-primary-700 leading-[1.8]">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-14">
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-6">採用情報</h2>
+    <p class="text-[15px] text-primary-700 leading-[1.9]">
+      臨床検査技師の採用は福井大学の職員採用として行われます。
+      募集状況は
+      <a href="https://www.u-fukui.ac.jp/" target="_blank" rel="noopener noreferrer" class="text-accent-600 underline underline-offset-2 hover:text-accent-500">福井大学ホームページ</a>
+      の採用情報をご確認ください。
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-bold text-primary-900 section-line mb-6">見学・お問い合わせ</h2>
+    <div class="rounded-2xl border border-primary-100 p-7 bg-white">
+      <p class="text-[15px] text-primary-700 leading-[1.9] mb-6">
+        見学のお申し込み・お問い合わせは、お電話にて検査部までご連絡ください。
+      </p>
+      <div class="space-y-2 text-sm text-primary-800">
+        <p><span class="text-primary-500 inline-block w-16">住所</span>〒910-1193 福井県吉田郡永平寺町松岡下合月23-3</p>
+        <p><span class="text-primary-500 inline-block w-16">電話</span>0776-61-3111（代表）「検査部」とお伝えください</p>
+        <p><span class="text-primary-500 inline-block w-16">受付</span>平日 8:30〜17:00</p>
+      </div>
+    </div>
+  </section>
+</PageLayout>

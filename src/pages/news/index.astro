@@ -1,0 +1,50 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import news from '../../data/news.json';
+
+interface NewsItem {
+  date: string;
+  category: string;
+  title: string;
+  body?: string;
+}
+
+const items = ([...news] as NewsItem[]).sort((a, b) => b.date.localeCompare(a.date));
+
+// 業績系（accent寄り）と運営系（primary寄り）でバッジ色を分ける
+function badgeClass(category: string): string {
+  const accent = ['論文掲載', '学会発表', '受賞'];
+  return accent.includes(category)
+    ? 'text-accent-600 border-accent-400'
+    : 'text-primary-600 border-primary-200';
+}
+
+function formatDate(d: string): string {
+  return d.replace(/-/g, '.');
+}
+---
+
+<PageLayout title="お知らせ" breadcrumb={[{ label: 'お知らせ' }]}>
+  {items.length === 0 ? (
+    <p class="text-sm text-primary-400">お知らせはまだありません。</p>
+  ) : (
+    <div class="divide-y divide-gray-100">
+      {items.map((item) => (
+        <article class="py-6 first:pt-0">
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <time class="text-sm font-medium text-primary-500 tracking-wide shrink-0" datetime={item.date}>
+              {formatDate(item.date)}
+            </time>
+            <span class={`text-[11px] border rounded px-2 py-0.5 ${badgeClass(item.category)}`}>
+              {item.category}
+            </span>
+          </div>
+          <h2 class="text-base font-bold text-primary-900 mb-1.5">{item.title}</h2>
+          {item.body && (
+            <p class="text-[14px] text-primary-700 leading-relaxed">{item.body}</p>
+          )}
+        </article>
+      ))}
+    </div>
+  )}
+</PageLayout>

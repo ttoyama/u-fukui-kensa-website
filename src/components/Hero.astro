@@ -1,0 +1,28 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="relative overflow-hidden bg-white">
+  <img
+    src={`${base}images/site/hero.png`}
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <!-- 左側のテキスト可読性のための淡いオーバーレイ -->
+  <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/40 to-transparent"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
+    <div class="hero-enter">
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-primary-200 px-3.5 py-1 text-[12px] font-medium text-primary-700 mb-4 backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
+        ISO 15189 認定検査室
+      </span>
+      <p class="text-primary-600 text-sm md:text-base font-medium mb-3 tracking-wide">福井大学医学部附属病院</p>
+      <h1 class="text-4xl md:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-primary-900">
+        検査部
+      </h1>
+      <p class="mt-5 text-[15px] md:text-base text-primary-800 font-medium max-w-md leading-relaxed">
+        正確な検査データで、福井の医療を支えます。
+      </p>
+    </div>
+  </div>
+</section>

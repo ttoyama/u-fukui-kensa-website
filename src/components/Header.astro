@@ -1,0 +1,157 @@
+---
+import { navigation } from '../data/navigation';
+
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+
+function isActive(item: { href: string; children?: { href: string }[] }): boolean {
+  const match = (href: string) => currentPath.startsWith(base + href.replace(/^\//, ''));
+  if (match(item.href)) return true;
+  return (item.children ?? []).some((c) => match(c.href));
+}
+---
+
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href={base} class="group flex items-center gap-2.5">
+        <img src={`${base}images/site/ufukui-logo.png`} alt="University of Fukui" class="h-5 w-auto shrink-0 opacity-80" />
+        <span class="hidden sm:block h-4 w-px bg-gray-300"></span>
+        <span class="text-[15px] font-bold text-primary-900 tracking-tight group-hover:text-primary-700 transition-colors leading-tight whitespace-nowrap">
+          福井大学医学部附属病院<span class="text-primary-400 font-normal mx-1">|</span>検査部
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden xl:flex items-center gap-1">
+        {navigation.map((item) => (
+          item.variant === 'activity' ? (
+            <a
+              href={base + item.href.replace(/^\//, '')}
+              class:list={[
+                'px-3 py-1.5 rounded-md text-[13px] font-medium transition-colors whitespace-nowrap',
+                isActive(item)
+                  ? 'bg-teal-100 text-teal-900'
+                  : 'bg-teal-50 text-teal-800 hover:bg-teal-100',
+              ]}
+            >
+              {item.label}
+            </a>
+          ) : item.emphasis ? (
+            <div class="relative group ml-2">
+              <a
+                href={base + item.href.replace(/^\//, '')}
+                class:list={[
+                  'inline-block px-4 py-2 rounded-full text-[13px] font-bold transition-colors whitespace-nowrap',
+                  isActive(item)
+                    ? 'bg-primary-700 text-white'
+                    : 'bg-primary-500 text-white hover:bg-primary-600',
+                ]}
+              >
+                {item.label}
+              </a>
+              {item.children && (
+                <div class="absolute left-0 top-full pt-1 hidden group-hover:block">
+                  <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-52">
+                    {item.children.map((child) => (
+                      <a
+                        href={base + child.href.replace(/^\//, '')}
+                        class="block px-4 py-2 text-[13px] text-primary-600 hover:text-primary-900 hover:bg-gray-50 transition-colors whitespace-nowrap"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+          <div class="relative group">
+            <a
+              href={base + item.href.replace(/^\//, '')}
+              class:list={[
+                'relative px-3 py-2 text-[13px] font-medium transition-colors whitespace-nowrap',
+                isActive(item)
+                  ? 'text-primary-500 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-accent-500'
+                  : 'text-gray-700 hover:text-primary-500',
+              ]}
+            >
+              {item.label}
+            </a>
+            {item.children && (
+              <div class="absolute left-0 top-full pt-1 hidden group-hover:block">
+                <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-44">
+                  {item.children.map((child) => (
+                    <a
+                      href={base + child.href.replace(/^\//, '')}
+                      class="block px-4 py-2 text-[13px] text-primary-600 hover:text-primary-900 hover:bg-gray-50 transition-colors"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          )
+        ))}
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button
+        id="menu-toggle"
+        class="xl:hidden p-2 -mr-2 text-primary-600 hover:text-primary-900"
+        aria-label="メニュー"
+        aria-expanded="false"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav: ヘッダー下から画面下まで覆うオーバーレイ -->
+<!-- header の backdrop-blur が fixed の基準を壊すため、header の外に置く -->
+<nav id="mobile-nav" class="hidden xl:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-white overflow-y-auto overscroll-contain">
+  <div class="px-6 pt-4 pb-10 space-y-1">
+    {navigation.map((item) => (
+      <>
+        <a
+          href={base + item.href.replace(/^\//, '')}
+          class:list={[
+            'block px-3 py-2 text-sm rounded-md transition-colors',
+            item.variant === 'activity'
+              ? (isActive(item) ? 'bg-teal-100 text-teal-900' : 'bg-teal-50 text-teal-800')
+              : item.emphasis
+                ? 'bg-primary-500 text-white font-bold mt-1'
+                : isActive(item) ? 'text-primary-900 bg-primary-50 font-medium' : 'text-primary-600',
+          ]}
+        >
+          {item.label}
+        </a>
+        {item.children?.map((child) => (
+          <a
+            href={base + child.href.replace(/^\//, '')}
+            class="block pl-8 py-3 text-sm text-primary-600 hover:text-primary-800 hover:bg-gray-50 rounded-md"
+          >
+            {child.label}
+          </a>
+        ))}
+      </>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav?.classList.toggle('hidden');
+    // メニュー展開中は背景のスクロールをロックし、裏で本文が動く違和感を防ぐ
+    document.body.classList.toggle('overflow-hidden', !expanded);
+  });
+</script>
