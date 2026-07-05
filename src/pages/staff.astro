@@ -33,6 +33,21 @@ const base = import.meta.env.BASE_URL;
               <p class="text-xs text-primary-500">{m.title}</p>
             </div>
             {m.note && <p class="text-xs text-primary-400 mt-1">{m.note}</p>}
+            {m.certifications && (
+              <ul class="text-xs leading-relaxed mt-2 space-y-0.5">
+                {m.certifications.map((c) => {
+                  const sp = c.indexOf(' ');
+                  const body = sp > 0 ? c.slice(0, sp) : c;
+                  const qual = sp > 0 ? c.slice(sp + 1) : '';
+                  return (
+                    <li>
+                      <span class="text-primary-400">{body}</span>
+                      {qual && <span class="text-primary-800 font-medium ml-1.5">{qual}</span>}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
         </div>
       ))}
@@ -51,6 +66,7 @@ const base = import.meta.env.BASE_URL;
               <div class="rounded-lg border border-primary-100 bg-primary-50 px-3.5 py-2.5">
                 <p class="text-[10px] text-primary-400 leading-none mb-1">{m.ruby}</p>
                 <p class="text-sm font-medium text-primary-900">{m.name}</p>
+                {m.qual && <p class="text-[10px] text-primary-500 mt-1">{m.qual}</p>}
               </div>
             ))}
           </div>
@@ -62,15 +78,19 @@ const base = import.meta.env.BASE_URL;
   <!-- 検査部で研究に取り組むメンバー -->
   {staff.researchAffiliates && staff.researchAffiliates.length > 0 && (
     <section class="mb-16">
-      <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-3 section-line">検査部とともに研究する方</h2>
-      <p class="text-sm text-primary-500 leading-[1.9] mb-6 max-w-2xl">
-        現在は関連施設で診療にあたりながら、検査医学講座で研究を継続。
-      </p>
+      <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-6 section-line">研究員</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
         {staff.researchAffiliates.map((m) => (
           <div class="rounded-lg border border-primary-100 bg-white px-3.5 py-2.5">
             <p class="text-[10px] text-primary-400 leading-none mb-1">{m.ruby}</p>
             <p class="text-sm font-medium text-primary-900">{m.name}</p>
+            {m.quals && (
+              <ul class="mt-1 space-y-0.5">
+                {m.quals.map((q) => (
+                  <li class="text-[10px] text-primary-500">{q}</li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>
