@@ -1,31 +1,81 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import divisions from '../data/divisions.json';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <PageLayout title="部門紹介" breadcrumb={[{ label: '部門紹介' }]} wide>
-  <p class="text-[15px] text-primary-600 leading-[1.9] mb-12 max-w-2xl">
+  <p class="text-[15px] text-primary-600 leading-[1.9] mb-4 max-w-2xl">
     検査部は4つの部門で構成され、病院で行われる幅広い検査を担当しています。
   </p>
 
-  <div class="space-y-10">
-    {divisions.map((d) => (
-      <section id={d.id} class="rounded-2xl border border-primary-100 overflow-hidden scroll-mt-24">
-        <div class="px-7 py-5 bg-primary-50 border-b border-primary-100 flex items-center gap-3">
-          <span class="text-2xl">{d.icon}</span>
-          <h2 class="text-xl font-bold text-primary-900">{d.name}</h2>
-        </div>
-        <div class="p-7">
-          <p class="text-[15px] text-primary-800 leading-[1.9] mb-6">{d.description}</p>
-          <div class="flex flex-wrap gap-2">
-            {d.items.map((item) => (
-              <span class="text-[13px] rounded-full border border-primary-200 bg-white px-3.5 py-1.5 text-primary-700">
-                {item}
-              </span>
-            ))}
+  <!-- 部門インデックス -->
+  <div class="flex flex-wrap gap-2 mb-16">
+    {divisions.map((d, i) => (
+      <a
+        href={`#${d.id}`}
+        class="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white px-4 py-1.5 text-sm text-primary-700 hover:bg-primary-50 transition-colors"
+      >
+        <span class="text-accent-500 font-bold text-xs">{String(i + 1).padStart(2, '0')}</span>
+        {d.name}
+      </a>
+    ))}
+  </div>
+
+  <!-- 各部門 -->
+  <div class="space-y-24 md:space-y-32">
+    {divisions.map((d, i) => (
+      <section id={d.id} class="scroll-mt-24 fade-up">
+        <div class={`grid md:grid-cols-2 gap-8 md:gap-14 items-center ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
+          <!-- ビジュアル -->
+          <div class="relative">
+            <span class="absolute -top-6 -left-2 md:-top-10 md:-left-4 text-7xl md:text-8xl font-bold text-primary-100 select-none z-0">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div class="relative z-10 rounded-3xl overflow-hidden border border-primary-100 shadow-sm"
+                 style="background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);">
+              <img
+                src={`${base}images/divisions/${d.image}`}
+                alt={d.name}
+                class="w-full aspect-square object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- テキスト -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">{d.icon}</span>
+              <span class="text-xs font-bold tracking-wider text-accent-600">DIVISION {String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary-900 mb-4 leading-tight">{d.name}</h2>
+            <p class="text-[15px] font-medium text-primary-700 mb-3 leading-[1.9]">{d.summary}</p>
+            <p class="text-sm text-primary-600 leading-[1.9] mb-6">{d.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {d.items.map((item) => (
+                <span class="text-[13px] rounded-full border border-primary-200 bg-white px-3.5 py-1.5 text-primary-700">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
     ))}
   </div>
+
+  <script>
+    // スクロールで各部門をふわっと表示
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach((el) => io.observe(el));
+  </script>
 </PageLayout>
