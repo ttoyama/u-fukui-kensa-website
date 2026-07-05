@@ -62,13 +62,13 @@ const cardBase = 'group relative block rounded-2xl border border-primary-100 ove
       <div class="max-w-5xl mx-auto px-6 py-20">
         <h2 class="text-2xl font-bold text-primary-900 mb-3">部門紹介</h2>
         <p class="text-[15px] text-primary-600 leading-[1.9] mb-10 max-w-2xl">
-          4つの部門が連携して、病院のすべての検査ニーズに応えています。
+          5つの部門が連携して、病院のすべての検査ニーズに応えています。
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           {divisions.map((d) => (
-            <a href={`${base}divisions/#${d.id}`} class={cardBase} style="background: #f0fdfa;">
+            <a href={`${base}divisions/#${d.id}`} class={cardBase} style="background: #eff6ff;">
               <div class="p-7">
-                <div class="text-2xl mb-2">{d.icon}</div>
+                <span class="inline-block h-1 w-8 rounded-full bg-accent-500 mb-3"></span>
                 <h3 class="text-lg font-bold text-primary-900 mb-2">{d.name}</h3>
                 <p class="text-sm text-primary-700 leading-relaxed">{d.summary}</p>
                 <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent-600 group-hover:gap-2 transition-all">詳しく見る →</span>
@@ -87,14 +87,14 @@ const cardBase = 'group relative block rounded-2xl border border-primary-100 ove
           日々の検査業務から生まれた疑問を研究テーマにして、技師と医師が一緒に学会発表・論文化に取り組んでいます。
         </p>
         <div class="grid md:grid-cols-2 gap-5">
-          <a href={base + 'research/'} class={cardBase} style="background: #f0fdfa;">
+          <a href={base + 'research/'} class={cardBase} style="background: #eff6ff;">
             <div class="p-8">
               <h3 class="text-xl font-bold text-primary-900 mb-3">研究紹介</h3>
               <p class="text-sm text-primary-700 leading-relaxed">検査部で取り組んでいる研究テーマを紹介します。</p>
               <span class="inline-flex items-center gap-1 mt-6 text-sm font-medium text-accent-600 group-hover:gap-2 transition-all">詳しく見る →</span>
             </div>
           </a>
-          <a href={base + 'achievements/'} class={cardBase} style="background: #f0fdfa;">
+          <a href={base + 'achievements/'} class={cardBase} style="background: #eff6ff;">
             <div class="p-8">
               <h3 class="text-xl font-bold text-primary-900 mb-3">研究業績</h3>
               <p class="text-sm text-primary-700 leading-relaxed">論文・学会発表の一覧です。</p>
@@ -109,7 +109,7 @@ const cardBase = 'group relative block rounded-2xl border border-primary-100 ove
     <section class="bg-gray-50/70 border-t border-gray-100">
       <div class="max-w-5xl mx-auto px-6 py-20">
         <a href={base + 'education/'} class="group relative block overflow-hidden rounded-2xl border border-primary-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-          <div class="absolute inset-0" style="background: linear-gradient(120deg, #115e59 0%, #0d9488 60%, #10b981 100%);"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(120deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);"></div>
           <div class="relative p-8 md:p-12">
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">学生・見学の方へ</h2>
             <p class="text-[15px] text-white/90 leading-[1.9] max-w-xl mb-6">

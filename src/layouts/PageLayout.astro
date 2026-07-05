@@ -18,7 +18,7 @@ const { title, description, breadcrumb, wide = false } = Astro.props;
   <Header />
   <main class="flex-1">
     <!-- Page header band -->
-    <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #0f766e 0%, #14b8a6 55%, #ccfbf1 100%);">
+    <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #1e40af 0%, #2563eb 55%, #bfdbfe 100%);">
       <div class={`mx-auto px-6 pt-10 pb-8 ${wide ? 'max-w-6xl' : 'max-w-3xl'}`}>
         {breadcrumb && <Breadcrumb items={breadcrumb} light />}
         <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">{title}</h1>
