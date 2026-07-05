@@ -36,7 +36,7 @@
     { "name": "松田 航平", "ruby": "まつた こうへい", "title": "医員", "note": "検査医学講座" }
   ],
   "researchAffiliates": [
-    { "name": "岩村 菜々美", "ruby": "いわむら ななみ", "quals": ["臨床検査専門医", "博士（医学）"] }
+    { "name": "岩村 菜々美", "ruby": "いわむら ななみ", "quals": ["日本専門医機構認定 臨床検査専門医", "博士（医学）"] }
   ],
   "technologistGroups": [
     {
