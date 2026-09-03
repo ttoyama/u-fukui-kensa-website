@@ -96,6 +96,15 @@ function venueWords(rec) {
 // 載せるより、取りこぼすほうがましという判断。
 function belongsToDept(rec) {
   if (!dualIds.has(rec.member_id)) return true;   // 検査部専任の業績はそのまま
+
+  // 業績データに名義が書いてあれば、それに従う。学会名からの推定より確実なので
+  // 最優先で見る。兼任者の業績を登録するときに付ける運用（data/CLAUDE.md 参照）。
+  const explicit = rec.departments ?? rec.department;
+  if (explicit) {
+    const arr = Array.isArray(explicit) ? explicit : [explicit];
+    if (arr.length > 0) return arr.includes(DEPARTMENT);
+  }
+
   const w = venueWords(rec);
   // 腎臓・透析系の学会や雑誌は、兼任者が腎臓内科の所属で出したもの。
   // 検査部スタッフが共著に入っていても、名義は腎臓内科なので載せない。
