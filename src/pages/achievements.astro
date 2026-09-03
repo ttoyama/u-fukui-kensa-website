@@ -50,6 +50,35 @@ function citation(p: Paper): string {
   if (p.page) s += `: ${p.page}`;
   return s;
 }
+// 発表形式の表示名
+const PRESENTATION_TYPE_JA: Record<string, string> = {
+  oral: '口演',
+  poster: 'ポスター',
+  symposium: 'シンポジウム',
+  invited: '招待講演',
+  invited_lecture: '招待講演',
+  workshop: 'ワークショップ',
+  other: 'その他',
+};
+
+// 開催日を「2026年9月13日」の形にする。年月しか無ければ「2026年9月」。
+function formatEventDate(start: string, end: string, ym: string) {
+  const one = (s: string) => {
+    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return m ? `${m[1]}年${Number(m[2])}月${Number(m[3])}日` : '';
+  };
+  const a = one(start);
+  if (!a) {
+    const m = (ym || '').match(/^(\d{4})-(\d{2})$/);
+    return m ? `${m[1]}年${Number(m[2])}月` : '';
+  }
+  const b = one(end);
+  if (!b || b === a) return a;
+  // 同じ年月なら日だけ足す（2026年9月26日〜27日）
+  const sameMonth = start.slice(0, 7) === end.slice(0, 7);
+  return sameMonth ? `${a}〜${Number(end.slice(8, 10))}日` : `${a}〜${b}`;
+}
+
 ---
 
 <PageLayout title="研究業績" breadcrumb={[{ label: '研究業績' }]}>
@@ -156,9 +185,16 @@ function citation(p: Paper): string {
               )}
               <p class="text-sm">
                 <span class="text-accent-700">{pr.conference}</span>
-                {pr.venue && <span class="text-primary-400 text-xs ml-1">（{pr.venue}）</span>}
+                {pr.number && <span class="text-primary-400 text-xs ml-1">{pr.number}</span>}
                 {pr.isInternational && (
                   <span class="text-[10px] text-accent-600 border border-accent-300 rounded px-1 ml-2 align-middle">国際学会</span>
+                )}
+              </p>
+              <p class="text-xs text-primary-400 mt-0.5">
+                {formatEventDate(pr.eventStart, pr.eventEnd, pr.date)}
+                {pr.venue && <span class="ml-2">{pr.venue}</span>}
+                {pr.type && PRESENTATION_TYPE_JA[pr.type] && (
+                  <span class="ml-2 border border-primary-200 rounded px-1">{PRESENTATION_TYPE_JA[pr.type]}</span>
                 )}
               </p>
             </article>
