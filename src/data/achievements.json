@@ -1,9 +1,71 @@
 {
-  "generatedAt": "2026-07-04",
+  "generatedAt": "2026-09-03",
   "papers": [
     {
       "fiscalYear": "2026",
       "items": [
+        {
+          "titleEn": "Maintenance of clinical remission with cyclosporine after discontinuation of prednisolone in a patient with tubulointerstitial nephritis with IgM-positive plasma cells",
+          "titleJa": "IgM陽性形質細胞を伴う尿細管間質性腎炎の1例における、プレドニゾロン中止後のシクロスポリンによる寛解維持",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Kazuki Yamada",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakao",
+              "dept": false
+            },
+            {
+              "name": "Minori Ikeda",
+              "dept": false
+            },
+            {
+              "name": "Reina Suetsugu-Ishizawa",
+              "dept": false
+            },
+            {
+              "name": "Nozomi Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Hirofumi Sakuma",
+              "dept": false
+            },
+            {
+              "name": "Motoki Matsuki",
+              "dept": false
+            },
+            {
+              "name": "Naoki Takahashi",
+              "dept": true
+            },
+            {
+              "name": "Masayuki Iwano",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Yayoi Ogawa",
+              "dept": false
+            },
+            {
+              "name": "Naoki Nakagawa",
+              "dept": false
+            }
+          ],
+          "journal": "CEN Case Reports",
+          "volume": "15",
+          "issue": "5",
+          "page": "127",
+          "date": "2026-08",
+          "doi": "10.1007/s13730-026-01153-y"
+        },
         {
           "titleEn": "Emerging Blood Biomarkers in Systemic Sclerosis: From Single Molecules to Biomarker-Based Patient Stratification",
           "titleJa": "全身性強皮症における新規血液バイオマーカー：単一分子からバイオマーカーに基づく患者層別化へ",
@@ -734,6 +796,136 @@
           "doi": "10.1002/cfch.202500016"
         },
         {
+          "titleEn": "Effects of risperidone on amino acid metabolism, glucose, and kidney function in healthy adults: A pilot randomized controlled trial",
+          "titleJa": "健常成人におけるリスペリドンのアミノ酸代謝・血糖・腎機能への影響：パイロット無作為化比較試験",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Yusuke Nakade",
+              "dept": false
+            },
+            {
+              "name": "Sakae Miyagi",
+              "dept": false
+            },
+            {
+              "name": "Hisayuki Ogura",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Takahiro Yuasa",
+              "dept": false
+            },
+            {
+              "name": "Akihiko Koshino",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Horikoshi",
+              "dept": false
+            },
+            {
+              "name": "Taichiro Minami",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Sako",
+              "dept": false
+            },
+            {
+              "name": "Shunsuke Tsuge",
+              "dept": false
+            },
+            {
+              "name": "Akira Tamai",
+              "dept": false
+            },
+            {
+              "name": "Ryo Nishioka",
+              "dept": false
+            },
+            {
+              "name": "Taro Miyagawa",
+              "dept": false
+            },
+            {
+              "name": "Kiyoaki Ito",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Ichiro Mizushima",
+              "dept": false
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Toshiaki Tokumaru",
+              "dept": false
+            },
+            {
+              "name": "Makoto Tsubomoto",
+              "dept": false
+            },
+            {
+              "name": "Mitsuru Kikuchi",
+              "dept": false
+            },
+            {
+              "name": "Masashi Kinoshita",
+              "dept": false
+            },
+            {
+              "name": "Mitsutoshi Nakada",
+              "dept": false
+            },
+            {
+              "name": "Masashi Mita",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            }
+          ],
+          "journal": "PLoS ONE",
+          "volume": "20",
+          "issue": "12",
+          "page": "e0324222",
+          "date": "2025-12",
+          "doi": "10.1371/journal.pone.0324222"
+        },
+        {
           "titleEn": "d-Alanine Supplementation for Chronic Kidney Disease: A Study Protocol for a Pilot Randomized Controlled Trial",
           "titleJa": "慢性腎臓病に対するd-アラニン補充：パイロットランダム化比較試験のプロトコル",
           "isJapanese": false,
@@ -908,6 +1100,60 @@
           "doi": "10.1002/14651858.CD015906.pub2"
         },
         {
+          "titleEn": "Serum matrix metalloproteinase-9 as a predictor of recurrence in idiopathic nephrotic syndrome",
+          "titleJa": "特発性ネフローゼ症候群の再発予測因子としての血清マトリックスメタロプロテアーゼ-9",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Masahiko Ochi",
+              "dept": false
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            }
+          ],
+          "journal": "Clinical and Experimental Nephrology",
+          "volume": "29",
+          "issue": "11",
+          "page": "1583",
+          "date": "2025-11",
+          "doi": "10.1007/s10157-025-02704-w"
+        },
+        {
           "titleEn": "Prognostic factors for out-of-hospital cardiac arrest patients with prolonged low-flow time undergoing extracorporeal cardiopulmonary resuscitation",
           "titleJa": "ECPR施行を受けた長時間low-flow time院外心停止患者の予後因子",
           "isJapanese": false,
@@ -962,6 +1208,170 @@
           "doi": "10.1093/ehjacc/zuaf072"
         },
         {
+          "titleEn": "CD45 + C1q + CCR8+ Cells as Emerging Indicators of Kidney Disease Severity and Progression Risk",
+          "titleJa": "腎疾患の重症度・進行リスクの新規指標としてのCD45+C1q+CCR8+細胞",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Koichi Sato",
+              "dept": false
+            },
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Yu Oshima",
+              "dept": false
+            },
+            {
+              "name": "Daichi Kaikoi",
+              "dept": false
+            },
+            {
+              "name": "Daiki Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Naoki Yamamoto",
+              "dept": false
+            },
+            {
+              "name": "Takahiro Matsuno",
+              "dept": false
+            },
+            {
+              "name": "Akihiko Koshino",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Sako",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Horikoshi",
+              "dept": false
+            },
+            {
+              "name": "Takahiro Yuasa",
+              "dept": false
+            },
+            {
+              "name": "Akira Tamai",
+              "dept": false
+            },
+            {
+              "name": "Taichiro Minami",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            },
+            {
+              "name": "Yasuhiko Yamamoto",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            }
+          ],
+          "journal": "Nephrology",
+          "volume": "30",
+          "issue": "9",
+          "page": "e70126",
+          "date": "2025-09",
+          "doi": "10.1111/nep.70126"
+        },
+        {
+          "titleEn": "Plasma cfDNA analysis of alectinib resistance-related gene alterations in the J-ALEX study",
+          "titleJa": "J-ALEX試験における血漿cfDNAを用いたアレクチニブ耐性関連遺伝子変異の解析",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "H. Sakaguchi",
+              "dept": false
+            },
+            {
+              "name": "R. Katayama",
+              "dept": false
+            },
+            {
+              "name": "M. Matsumoto",
+              "dept": false
+            },
+            {
+              "name": "A. Nishiyama",
+              "dept": false
+            },
+            {
+              "name": "K. Matsumoto",
+              "dept": false
+            },
+            {
+              "name": "A. Tajima",
+              "dept": false
+            },
+            {
+              "name": "S. Miyagi",
+              "dept": false
+            },
+            {
+              "name": "T. Toyama",
+              "dept": false
+            },
+            {
+              "name": "H. Mizuta",
+              "dept": false
+            },
+            {
+              "name": "K. Furugaki",
+              "dept": false
+            },
+            {
+              "name": "S. Yoshiura",
+              "dept": false
+            },
+            {
+              "name": "S. Takeuchi",
+              "dept": false
+            }
+          ],
+          "journal": "ESMO Open",
+          "volume": "10",
+          "issue": "9",
+          "page": "105574",
+          "date": "2025-09",
+          "doi": "10.1016/j.esmoop.2025.105574"
+        },
+        {
           "titleEn": "The efficacy and safety of adding hepatic arterial infusion chemotherapy using cisplatin to lenvatinib for advanced hepatocellular carcinoma",
           "titleJa": "",
           "isJapanese": false,
@@ -992,6 +1402,104 @@
           "doi": "10.1111/hepr.14194"
         },
         {
+          "titleEn": "Rescue of fulminant Clostridioides difficile infection in a hemodialysis patient:a case report",
+          "titleJa": "血液透析患者における劇症型Clostridioides difficile感染症の救命：症例報告",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Hiroyoshi Yanagisawa",
+              "dept": false
+            },
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Sako",
+              "dept": false
+            },
+            {
+              "name": "Yoshinori Takahashi",
+              "dept": false
+            },
+            {
+              "name": "Toshiaki Tokumaru",
+              "dept": false
+            },
+            {
+              "name": "Kaho Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Megumi Ikeda",
+              "dept": false
+            },
+            {
+              "name": "Fumitaka Yamamori",
+              "dept": false
+            },
+            {
+              "name": "Sho Kajikawa",
+              "dept": false
+            },
+            {
+              "name": "Daiki Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Takahiro Yuasa",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Horikoshi",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Takumi Taniguchi",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            }
+          ],
+          "journal": "Renal Replacement Therapy",
+          "volume": "11",
+          "issue": "1",
+          "page": "",
+          "date": "2025-07",
+          "doi": "10.1186/s41100-025-00656-1"
+        },
+        {
           "titleEn": "",
           "titleJa": "【慢性腎臓病(CKD)「CKD診療ガイドライン2023」および「CKD診療ガイド2024」の要点】CKD診療の実際　「CKD診療ガイドライン2023」および「CKD診療ガイド2024」のエッセンス　高血圧性腎硬化症の診断と治療",
           "isJapanese": true,
@@ -1003,6 +1511,186 @@
           "page": "848",
           "date": "2025-06",
           "doi": "10.50936/J01778.20250603060007"
+        },
+        {
+          "titleEn": "Effects of sake lees intake on fecal uremic toxins, plasma D-alanine, constipation, and gut microbiome in healthy adults:A single-arm clinical trial",
+          "titleJa": "健常成人における酒粕摂取が糞便中尿毒症物質・血漿D-アラニン・便秘・腸内細菌叢に及ぼす影響：単群臨床試験",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Toshiaki Tokumaru",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Yusuke Nakade",
+              "dept": false
+            },
+            {
+              "name": "Hisayuki Ogura",
+              "dept": false
+            },
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Masashi Mita",
+              "dept": false
+            },
+            {
+              "name": "Taro Miyagawa",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            }
+          ],
+          "journal": "PLoS ONE",
+          "volume": "20",
+          "issue": "6",
+          "page": "e0325482",
+          "date": "2025-06",
+          "doi": "10.1371/journal.pone.0325482"
+        },
+        {
+          "titleEn": "Autotaxin concentrations in peritoneal dialysis effluent reflect peritoneal function",
+          "titleJa": "腹膜透析排液中オートタキシン濃度は腹膜機能を反映する",
+          "isJapanese": false,
+          "summary": "",
+          "authors": [
+            {
+              "name": "Keisuke Horikoshi",
+              "dept": false
+            },
+            {
+              "name": "Norihiko Sakai",
+              "dept": false
+            },
+            {
+              "name": "Megumi Oshima",
+              "dept": false
+            },
+            {
+              "name": "Hiroyuki Yamauchi",
+              "dept": false
+            },
+            {
+              "name": "Megumi Ikeda",
+              "dept": false
+            },
+            {
+              "name": "Kaho Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Hiroyoshi Yanagisawa",
+              "dept": false
+            },
+            {
+              "name": "Fumitaka Yamamori",
+              "dept": false
+            },
+            {
+              "name": "Sho Kajikawa",
+              "dept": false
+            },
+            {
+              "name": "Daiki Hayashi",
+              "dept": false
+            },
+            {
+              "name": "Akihiko Koshino",
+              "dept": false
+            },
+            {
+              "name": "Keisuke Sako",
+              "dept": false
+            },
+            {
+              "name": "Takahiro Yuasa",
+              "dept": false
+            },
+            {
+              "name": "Akira Tamai",
+              "dept": false
+            },
+            {
+              "name": "Taichiro Minami",
+              "dept": false
+            },
+            {
+              "name": "Shiori Nakagawa",
+              "dept": false
+            },
+            {
+              "name": "Shinji Kitajima",
+              "dept": false
+            },
+            {
+              "name": "Tadashi Toyama",
+              "dept": true
+            },
+            {
+              "name": "Akinori Hara",
+              "dept": false
+            },
+            {
+              "name": "Miho Shimizu",
+              "dept": false
+            },
+            {
+              "name": "Satoshi Oota",
+              "dept": false
+            },
+            {
+              "name": "Yoichi Ishida",
+              "dept": false
+            },
+            {
+              "name": "Takashi Wada",
+              "dept": false
+            },
+            {
+              "name": "Yasunori Iwata",
+              "dept": false
+            }
+          ],
+          "journal": "Therapeutic Apheresis and Dialysis",
+          "volume": "29",
+          "issue": "2",
+          "page": "276",
+          "date": "2025-04",
+          "doi": "10.1111/1744-9987.14211"
         },
         {
           "titleEn": "Prevalence and Treatment Patterns of Anaemia in Individuals With Chronic Kidney Disease Across Asia: A Systematic Review and Meta-Analysis",
@@ -2176,6 +2864,19 @@
           "page": "14499",
           "date": "2024-09",
           "doi": "10.1021/acs.analchem.4c02653"
+        },
+        {
+          "titleEn": "",
+          "titleJa": "血尿精査における腎生検の意義",
+          "isJapanese": true,
+          "summary": "",
+          "authors": [],
+          "journal": "日医雑誌",
+          "volume": "153",
+          "issue": "6",
+          "page": "617",
+          "date": "2024-09",
+          "doi": ""
         },
         {
           "titleEn": "PPAR-α Insufficiency Enhances Doxorubicin-Induced Nephropathy in PPAR-α Knockout Mice and a Murine Podocyte Cell Line",
@@ -4767,6 +5468,182 @@
           "isInternational": false
         },
         {
+          "title": "高温度HIPEC（Hyperthermic Intraperitoneal Chemotherapy）の温度管理と潅流技術とその工夫",
+          "authors": [
+            {
+              "name": "湶孝介",
+              "dept": true
+            },
+            {
+              "name": "森川充洋",
+              "dept": false
+            },
+            {
+              "name": "前川展廣",
+              "dept": false
+            },
+            {
+              "name": "片山寛次",
+              "dept": false
+            },
+            {
+              "name": "五井孝憲",
+              "dept": false
+            }
+          ],
+          "conference": "日本ハイパーサーミア学会第43回大会",
+          "venue": "",
+          "date": "2026-09",
+          "isInternational": false
+        },
+        {
+          "title": "多断面による三尖弁評価の有用性を示した2症例",
+          "authors": [
+            {
+              "name": "三谷真緒",
+              "dept": true
+            }
+          ],
+          "conference": "JSS中部 第44回地方会学術集会",
+          "venue": "",
+          "date": "2026-09",
+          "isInternational": false
+        },
+        {
+          "title": "みんなで考えよう症例報告　〜検査データの「違和感」から背景を探る〜",
+          "authors": [
+            {
+              "name": "武田泉",
+              "dept": true
+            }
+          ],
+          "conference": "北陸一般検査セミナー2026",
+          "venue": "",
+          "date": "2026-09",
+          "isInternational": false
+        },
+        {
+          "title": "頸部血管エコー検査で高安動脈炎と他の血管炎の鑑別に迷った1例",
+          "authors": [
+            {
+              "name": "坪田英里奈",
+              "dept": true
+            }
+          ],
+          "conference": "第7回中部CVTの会",
+          "venue": "",
+          "date": "2026-08",
+          "isInternational": false
+        },
+        {
+          "title": "低アルブミン血症検体における白血球分類の適正化：通常標本厚層部観察とアルブミン添加法の精度評価",
+          "authors": [
+            {
+              "name": "浅井優里",
+              "dept": true
+            },
+            {
+              "name": "山野智子",
+              "dept": true
+            },
+            {
+              "name": "黒瀬知美",
+              "dept": true
+            },
+            {
+              "name": "関口清美",
+              "dept": true
+            },
+            {
+              "name": "杉本充",
+              "dept": true
+            },
+            {
+              "name": "遠山直志",
+              "dept": true
+            }
+          ],
+          "conference": "第36回日本臨床化学会東海・北陸支部総会第44回日本臨床検査医学会東海・北陸支部例会連合大会",
+          "venue": "",
+          "date": "2026-08",
+          "isInternational": false
+        },
+        {
+          "title": "「ナノピアPCT-A」改良試薬の基礎的性能評価",
+          "authors": [
+            {
+              "name": "武田泉",
+              "dept": true
+            },
+            {
+              "name": "旭ななえ",
+              "dept": true
+            },
+            {
+              "name": "今本徹",
+              "dept": true
+            },
+            {
+              "name": "新免望",
+              "dept": true
+            },
+            {
+              "name": "増永慎也",
+              "dept": true
+            },
+            {
+              "name": "加賀屋潤",
+              "dept": false
+            },
+            {
+              "name": "山本耀介",
+              "dept": false
+            },
+            {
+              "name": "飛田征男",
+              "dept": true
+            },
+            {
+              "name": "高橋直生",
+              "dept": true
+            },
+            {
+              "name": "遠山直志",
+              "dept": true
+            }
+          ],
+          "conference": "第36回日本臨床化学会東海・北陸支部総会第44回日本臨床検査医学会東海・北陸支部例会連合大会",
+          "venue": "",
+          "date": "2026-08",
+          "isInternational": false
+        },
+        {
+          "title": "RPA(Robotic Process Automation)を用いた業務改善の取り組み",
+          "authors": [
+            {
+              "name": "今本徹",
+              "dept": true
+            }
+          ],
+          "conference": "第36回日本臨床化学会東海・北陸支部総会第44回日本臨床検査医学会東海・北陸支部例会連合大会",
+          "venue": "",
+          "date": "2026-08",
+          "isInternational": false
+        },
+        {
+          "title": "当院における15年間のMRSA動態",
+          "authors": [
+            {
+              "name": "久田恭子",
+              "dept": true
+            }
+          ],
+          "conference": "第41回日本環境感染学会総会・学術集会",
+          "venue": "",
+          "date": "2026-07",
+          "isInternational": false
+        },
+        {
           "title": "ロボット支援下手術における離被架設置位置の最適化による機器干渉防止効果",
           "authors": [
             {
@@ -4837,6 +5714,19 @@
           ],
           "conference": "第16回福井県臨床工学会",
           "venue": "福井大学医学部附属病院 白翁会ホール",
+          "date": "2026-05",
+          "isInternational": false
+        },
+        {
+          "title": "血管エコーハンズオン - 基本走査をみんなで共有しよう -",
+          "authors": [
+            {
+              "name": "前田文江",
+              "dept": true
+            }
+          ],
+          "conference": "日本超音波医学会第99回学術集会",
+          "venue": "",
           "date": "2026-05",
           "isInternational": false
         }
@@ -4974,7 +5864,32 @@
         },
         {
           "title": "PPRAα活性化はオートファジー亢進を介してドキソルビシン腎障害を抑制する可能性がある ―欠損マウスとポドサイト培養を用いた解析―",
-          "authors": [],
+          "authors": [
+            {
+              "name": "松田 航平",
+              "dept": true
+            },
+            {
+              "name": "岩村 菜々美",
+              "dept": true
+            },
+            {
+              "name": "高橋 直生",
+              "dept": true
+            },
+            {
+              "name": "槽野 健司",
+              "dept": false
+            },
+            {
+              "name": "遠山 直志",
+              "dept": true
+            },
+            {
+              "name": "木村 秀樹",
+              "dept": true
+            }
+          ],
           "conference": "第38回腎と脂質研究会",
           "venue": "福岡市",
           "date": "2026-02",
@@ -5039,7 +5954,40 @@
         },
         {
           "title": "90歳以上で診断したバセドウ病の2例",
-          "authors": [],
+          "authors": [
+            {
+              "name": "岩村 菜々美",
+              "dept": true
+            },
+            {
+              "name": "深田 修司",
+              "dept": false
+            },
+            {
+              "name": "西原 永潤",
+              "dept": false
+            },
+            {
+              "name": "伊藤 充",
+              "dept": false
+            },
+            {
+              "name": "西川 光重",
+              "dept": false
+            },
+            {
+              "name": "宮内 昭",
+              "dept": false
+            },
+            {
+              "name": "赤水 尚史",
+              "dept": false
+            },
+            {
+              "name": "遠山 直志",
+              "dept": true
+            }
+          ],
           "conference": "第68回日本甲状腺学会学術集会",
           "venue": "",
           "date": "2025-11",
